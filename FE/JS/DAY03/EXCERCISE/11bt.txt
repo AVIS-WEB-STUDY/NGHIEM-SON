@@ -1,0 +1,112 @@
+Bài 1:Tìm sản phẩm theo id
+const products = [
+    { id: 1, name: "iPhone" },
+    { id: 2, name: "Samsung" },
+    { id: 3, name: "Xiaomi" }
+];
+
+const productId = 2;
+
+Bài 2: Tìm đơn hàng chưa thanh toán
+
+const orders = [
+    { id: 1, paid: true },
+    { id: 2, paid: false },
+    { id: 3, paid: true }
+];
+
+Bài 3: Tìm sản phẩm đắt nhất
+const products = [
+    { name: "A", price: 100 },
+    { name: "B", price: 300 },
+    { name: "C", price: 200 }
+];
+
+Kết quả: { name: "B", price: 300 }
+
+Bài 4: Đếm số user đang hoạt động;
+const users = [
+    { name: "A", active: true },
+    { name: "B", active: false },
+    { name: "C", active: true }
+];
+
+Kết quả: 2
+
+Bài 5: Tìm sản phẩm bán chạy nhất
+const orders = [
+    "iphone",
+    "iphone",
+    "samsung",
+    "iphone",
+    "xiaomi",
+    "xiaomi"
+];
+
+Kết quả: iPhone
+
+Bài 6: Tìm số xuất hiện nhiều nhất
+[1, 1, 2, 2, 2, 3] -> 2
+
+Bài 7: Tìm đơn hàng có giá trị cao nhất
+
+const orders = [
+    { id: 1, total: 500 },
+    { id: 2, total: 1200 },
+    { id: 3, total: 800 }
+];
+Kết quả: { id: 2, total: 1200 }
+
+Bài 8: Đếm số đơn hàng theo trạng thái
+const orders = [
+    { status: "pending" },
+    { status: "completed" },
+    { status: "pending" },
+    { status: "cancelled" }
+];
+kết quả: {
+    pending: 2,
+    completed: 1,
+    cancelled: 1
+}
+
+Bài 9: Đếm tổng số học sinh
+const classes = [
+    {
+        name: "A",
+        students: ["An", "Bình"]
+    },
+    {
+        name: "B",
+        students: ["Cường"]
+    }
+];
+
+Kết quả 3
+
+Bài 10: Tìm lớp có nhiều học sinh nhất
+const classes = [
+    {
+        name: "A",
+        students: ["An", "Bình"]
+    },
+    {
+        name: "B",
+        students: ["Cường", "Dũng", "Hùng"]
+    }
+];
+
+Kết quả:
+{
+    name: "B",
+    students: ["Cường", "Dũng", "Hùng"]
+}
+
+Bài 11: Kiểm tra form có trường nào rỗng không
+const form = {
+    name: "Nghiem",
+    email: "",
+    age: 25
+};
+
+Kết quả: true.

@@ -176,6 +176,7 @@ hãy tạo ra mảng mới newUsers
 
     let newUsers = [];
     for (const user of users) {
+        if (user.gender !== "nam") continue;
         newUser = {
             human: `${user.name}${user.id}`,
             gender: user.gender,
