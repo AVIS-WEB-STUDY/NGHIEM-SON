@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        table {
+            font-family: arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        td,
+        th {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: #dddddd;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        input[type="file"] {
+            color: transparent
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="title"></h1>
+    <p>
+        Id:
+        <input id="valId" type="text" disabled />
+    </p>
+
+    <p>
+        UserName:
+        <input id="valUserName" type="text" placeholder="Nhập tên" />
+    </p>
+    <p>
+        Avatar:
+        <input id="valAvatar" type="file" accept="image/png, image/jpeg" />
+        <span id="nameAvatar"></span> <img src="" id="previewAvatar" />
+    </p>
+    <p>
+        Salary:
+        <input id="valSalary" type="number" placeholder="Nhập số" />
+    </p>
+    <p>
+        Des:
+        <textarea id="valDes"> </textarea>
+    </p>
+    <p>
+        Gender:
+        <input type="radio" name="gender" value="Male" /> Male
+        <input type="radio" name="gender" value="Female" /> Female
+    </p>
+    <p>
+        Married:
+        <input type="checkbox" id="valMarried" />
+    </p>
+    <p>
+        Ducation:
+        <select id="valDucation">
+            <option value="">Choose select option</option>
+            <option value="1">1 Năm</option>
+            <option value="2">2 Năm</option>
+            <option value="3">3 Năm</option>
+            <option value="4">4 Năm</option>
+        </select>
+    </p>
+    <div style="display: flex;gap: 10px;padding:20px 0">
+        <button id="btnSubmit" onclick="handleSubmit()">
+            Thêm
+        </button>
+        <button style="display: none" id="btnDelete" onclick="handleDeleteUserFromCheckBox()">
+        </button>
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    All <input id="checkboxAll" type="checkbox" />
+                </th>
+                <th>ID</th>
+                <th>User Name</th>
+                <th>Avatar</th>
+                <th>Des</th>
+                <th>Salary</th>
+                <th>Gender</th>
+                <th>Married</th>
+                <th>Ducation</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <span id="noData"></span>
+
+    <script src="main.js"></script>
+</body>
+
+</html>

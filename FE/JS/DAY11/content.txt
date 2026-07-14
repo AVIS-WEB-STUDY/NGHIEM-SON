@@ -1,0 +1,2 @@
+Chữa bài tập bất đồng bộ với fetch API, async/await, promise, try/catch, DOM manipulation, event handling, và template literals.
+cho thêm bài tập về nhà(xem trong EXCERCISE)
