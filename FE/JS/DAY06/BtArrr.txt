@@ -1,0 +1,467 @@
+/**
+ *  Ôn lại
+ *  Bài 1: Cho 1 mảng products sau
+ const product = [
+    {
+      name: "but chi",
+      price: 10000,
+      amount: 10,
+      color: ["red", "green", "blue"],
+      origin: "Thien long",
+      code: "BC01",
+    },
+    {
+      name: "but chi",
+      price: 8000,
+      amount: 90,
+      color: ["red", "green"],
+      origin: "Hong ha",
+      code: "BC02",
+    },
+    {
+      name: "but bi",
+      price: 9000,
+      amount: 20,
+      color: ["red", "green", "blue"],
+      origin: "Thien long",
+      code: "BC03",
+    },
+    {
+      name: "but bi",
+      price: 8000,
+      amount: 15,
+      color: ["red", "green", "blue", "yellow"],
+      origin: "Thien long",
+      code: "BC04",
+    },
+    {
+      name: "but xoa",
+      price: 8000,
+      amount: 15,
+      color: ["red", "green"],
+      origin: "Hong ha",
+      code: "BC05",
+    },
+    {
+      name: "but xoa",
+      price: 8000,
+      amount: 22,
+      color: ["red", "green", "black"],
+      origin: "Thien long",
+      code: "BC06",
+    },
+  ];
+
+Câu 1: Sử dụng hàm forEach, hiển thị ra màn hình thông tin các sản phẩm theo cấu trúc.
+"Sản phẩm a, msp b: giá bán c vnd, có các màu x-y-z, được phân
+phối bởi công ty d
+Hàng tồn:  e"
+
+Trong đó, a là tên sp, b là mã sp, c là giá bán, xyz là các màu
+của sản phẩm, d là nhà cung cấp, e là số lượng tồn kho.
+
+Câu 2: sử dụng một hàm đã học của array để tạo ra một mảng sản phẩm mới ,
+với mức giá của sản phẩm có mã "BC05" tăng lên 2000, và sản phẩm có mã "BC04" thêm màu "purple",
+tất cả tên của sản phẩm được viết hoa.
+
+Câu 3: sử dụng hàm của array để lọc ra
+những sản phẩm có lượng hàng tồn kho nhỏ hơn 10 và có giá ít nhất 8000.
+
+Câu 4: sử dụng hàm của array để tìm 1 ra sản phẩm
+của nhà cung cấp "Hong ha" và ( có giá trên 10000 hoặc có số hàng tồn <6 ).
+
+Câu 5: sử dụng hàm của array để kiểm tra xem, có phải có ít nhất một
+sản phẩm  của nhà cung cấp "Thien long" có giá trên 10000 không
+
+
+Câu 6: sử dụng hàm của array để kiểm tra xem, có phải tất cả các
+sản phẩm đều còn hàng hay không?
+
+Câu 7: sử dụng hàm của array để tạo ra một mảng sản phẩm mới,với mỗi sản phẩm
+có thêm một thông tin là locked để lưu thông tin xem sản phẩm có đang bị cấm
+không ,  thực hiện cấm bán với những sản phẩm thuộc nhà cung cấp "Thien long"
+
+Câu 8: sử dụng hàm của array để sắp xếp các sản phẩm trên theo
+thứ tự tăng đần của giá.
+
+Câu 9: sử dụng hàm của array để sắp xếp các sản phẩm trên theo
+ thứ tự giảm đần của số lượng hàng tồn
+ */
+// =========================================================================
+/**
+ * Bài 1: Chuyển mảng số thành object
+ * [1, 2, 3] => [
+                    { value: 1 },
+                    { value: 2 },
+                    { value: 3 }
+                ]
+ */
+
+/**
+ * Bài 2: Lấy tên từ danh sách user
+ *  [
+        { id: 1, name: "An" },
+        { id: 2, name: "Bình" }
+    ]
+    => "An", "Bình"]
+ */
+
+/**
+ * Bài 3: Đánh dấu sản phẩm hết hàng
+ *  [{ name: "A", stock: 0 }] => thêm isOutOfStock
+ */
+
+/**
+ * Bài 4: cho danh sách đơn hàng
+ *  [
+        { orderId: 1, items: [{ price: 10 }, { price: 20 }] }
+    ]
+    => mong muốn tạo 1 mảng như sau: [{ orderId: 1, total: 30 }]
+    lưu ý: total là tổng danh sách items
+ */
+
+/**
+ * Bài 5:Tính tổng điểm từng sinh viên
+    [
+         { name: "A", scores: [8, 9, 7] }
+    ]
+    thêm average
+ */
+
+/**
+ * Bài 6
+ *  từ mảng student
+const students = [
+  { name: "Nghiêm 1", scores: [90, 85, 92] },
+  { name: "Nghiêm 2", scores: [75, 80, 85] },
+  { name: "Nghiêm 3", scores: [90, 95, 89] },
+  { name: "Nghiêm 4", scores: [100, 100, 100] },
+];
+
+từ students hiển thị danh sách học sinh có điểm trung bình lớn hơn 90
+output:  [
+		    { name: 'Nghiêm 3', tbc: 91.33333333333333 },
+ 		    { name: 'Nghiêm 4', tbc: 100 }
+        ]
+
+==========================================
+ */
+
+/**
+ * Bài 7: cho mảng học sinh, mong muốn 1 mảng mới có danh sách học sinh điểm cao nhất.
+
+const listHS = [
+  {
+    name: "A",
+    diem: 4,
+  },
+  {
+    name: "B",
+    diem: 6,
+  },
+  {
+    name: "C",
+    diem: 8,
+  },
+  {
+    name: "D",
+    diem: 8,
+  },
+];
+ */
+
+/**
+ *Bài 8:  loại bỏ phần tử rỗng bắt đầu index là 2
+     ["", "nghiem", "", "", "nghiem1", "", ""];
+ */
+
+/**
+ * Bài 9: dùng reduce
+const bai9 = [
+  {
+    inventoryItem: {
+      inventoryLevels: [
+        {
+          stockedQuantity: 43,
+        },
+        {
+          stockedQuantity: 0,
+        },
+        {
+          stockedQuantity: 0,
+        },
+        {
+          stockedQuantity: 0,
+        },
+      ],
+    },
+  },
+  {
+    inventoryItem: {
+      inventoryLevels: [
+        {
+          stockedQuantity: 43,
+        },
+        {
+          stockedQuantity: 0,
+        },
+        {
+          stockedQuantity: 3,
+        },
+        {
+          stockedQuantity: 1,
+        },
+      ],
+    },
+  },
+];
+
+tính tổng tất cả stockedQuantity của array
+ */
+
+/**
+ * Bài 10: dùng reduce
+const bai10 = [
+  {
+    inventoryItem: {
+      inventoryLevels: [
+        {
+          stockedQuantity: 43,
+          id: "nghiem1",
+        },
+        {
+          stockedQuantity: 5,
+          id: "nghiem",
+        },
+        {
+          stockedQuantity: 0,
+          id: "nghiem1",
+        },
+        {
+          stockedQuantity: 10,
+          id: "nghiem",
+        },
+      ],
+    },
+  },
+  {
+    inventoryItem: {
+      inventoryLevels: [
+        {
+          stockedQuantity: 45,
+          id: "nghiem",
+        },
+        {
+          stockedQuantity: 0,
+          id: "nghiem1",
+        },
+        {
+          stockedQuantity: 0,
+          id: "nghiem1",
+        },
+        {
+          stockedQuantity: 0,
+          id: "nghiem1",
+        },
+      ],
+    },
+  },
+];
+
+const b = "nghiem";
+
+Y/C: tính tổng tất cả stockedQuantity nếu id trùng với giá trị b
+ */
+
+/**
+ * Bài 11:
+const products = [
+  {
+    isHide: false,
+    position: 1,
+    id: "1234",
+  },
+  {
+    isHide: false,
+    position: 2,
+    id: "12345",
+  },
+  {
+    isHide: false,
+    position: 3,
+    id: "123456",
+  },
+  {
+    isHide: false,
+    position: 4,
+    id: "1234567",
+  },
+];
+
+const productId = "1234";
+
+ý a: nếu productId trùng với id của mảng products thì tạo mảng mới
+chuyển đổi isHide thành true
+
+ý b: nếu giá trị phần tử ids trùng với id của mảng products
+thì tạo mảng mới chuyển đổi isHide thành true
+
+ý c:const ids = ["12345", "1234"];
+ nếu giá trị phần tử ids trùng với id của mảng products thì tạo mảng mới ,
+ xóa luôn item đó
+ */
+
+
+=============================================================
+
+/**
+ *  Bài 1:  Chuyển tên thành chữ hoa
+ *    const names = ["an", "binh", "cuong"];
+ */
+
+/**
+ *  Bài 2: Format dữ liệu user
+ *  input: 
+ *  const users = [
+        { name: "An", age: 20 },
+        { name: "Bình", age: 25 }
+    ];
+
+    Tạo dữ liệu mới:
+    [
+        {
+            fullName: "An",
+            isAdult: true
+        }
+    ]
+ */
+
+/**
+ *  Bài 3: Tìm user có id = 2.
+ *  const users = [
+        { id: 1, name: "An" },
+        { id: 2, name: "Bình" }
+    ];
+ */
+
+/**
+ *  Bài 4: Kiểm tra có số âm không
+ *  const numbers = [1, 2, -3, 4];
+ */
+
+/**
+ *  Bài 5: Tính tổng các số chẵn.
+ *  const numbers = [1, 2, 3, 4, 5, 6];
+ */
+
+
+/**
+ *  Bài 6: Nhân đôi tất cả số rồi tính tổng.
+ *  const numbers = [1, 2, 3];
+ */
+
+/** 
+ * Bài 7: Xử lý đơn hàng
+ * const orders = [
+                {
+                    id: 1,
+                    status: "success",
+                    amount: 100
+                },
+                {
+                    id: 2,
+                    status: "pending",
+                    amount: 200
+                },
+                {
+                    id: 3,
+                    status: "success",
+                    amount: 300
+                }
+    ];
+
+    - chỉ lấy đơn hàng success
+    - tăng amount thêm 10%
+    - tính tổng cuối cùng
+ */
+
+/**
+ *  Bài 8: Lấy menu được phép hiển thị.
+ *  const menus = [
+        { name: "Dashboard", role: "admin" },
+        { name: "Users", role: "admin" },
+        { name: "Profile", role: "user" }
+    ];
+    const currentRole = "admin";
+ */
+
+/**
+ *  Bài 9: Gom nhóm user theo role
+ * const users = [
+        { name: "An", role: "admin" },
+        { name: "Bình", role: "user" },
+        { name: "Cường", role: "admin" }
+    ];
+    Output:
+    {
+        admin: ["An", "Cường"],
+        user: ["Bình"]
+    }
+ */
+
+/**
+ * Bài 10:  Lấy tên tất cả sản phẩm giá > 100.
+ *  const categories = [
+  {
+    name: "Electronics",
+    products: [
+      { name: "Laptop", price: 1000 },
+      { name: "Mouse", price: 50 }
+    ]
+  },
+  {
+    name: "Fashion",
+    products: [
+      { name: "Shirt", price: 80 },
+      { name: "Jacket", price: 200 }
+    ]
+  }
+    ];
+ */
+
+/**
+ *  Bài 11: Thống kê học sinh
+ *  
+ const students = [
+    { name: "An", score: 8 },
+    { name: "Bình", score: 4 },
+    { name: "Cường", score: 10 },
+    { name: "Dũng", score: 6 }
+ ];
+ Yêu cầu
+    - lấy học sinh đậu
+    - đổi tên thành chữ hoa
+    - sắp xếp điểm giảm dần
+    - lấy tổng điểm
+ */
+
+/**
+ *  Bài 12: 
+const cart = [
+  {
+    name: "Laptop",
+    price: 1000,
+    quantity: 1
+  },
+  {
+    name: "Mouse",
+    price: 50,
+    quantity: 2
+  }
+];
+Yêu cầu
+    tạo dữ liệu mới thêm total
+    tính tổng tiền cuối cùng
+    kiểm tra có sản phẩm nào > 500 không
+    kiểm tra tất cả quantity > 0 không
+ */
